@@ -1,0 +1,674 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FLORÉA | Confitería gourmet cristalina</title>
+  <meta name="description" content="FLORÉA crea esferas de gelatina cristalina con flores comestibles y sabores gourmet, diseñadas para sorprender y convertir cada ocasión en una experiencia visual y gastronómica." />
+  <style>
+  :root {
+    --bg: #fffaf4;
+    --surface: #ffffff;
+    --text: #1f1b1a;
+    --muted: #6f645f;
+    --line: #eadfd6;
+    --brand: #b85f7a;
+    --brand2: #d48c5f;
+    --accent: #7d8f63;
+    --shadow: 0 24px 60px rgba(47, 25, 20, .10);
+    --radius: 28px;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  .brand {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.brand-logo {
+  height: 36px;       /* Controla el alto del logo dentro de la barra (puedes probar entre 32px y 45px) */
+  width: auto;        /* Calcula el ancho automáticamente para no deformar la imagen */
+  max-width: 180px;   /* Límite de ancho por seguridad en móviles */
+  object-fit: contain;
+  display: block;
+}
+  body {
+    margin: 0;
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: radial-gradient(circle at top left, #fff 0, #fff8f1 28%, var(--bg) 70%);
+    color: var(--text);
+    line-height: 1.5;
+  }
+
+  img,
+  video {
+    max-width: 100%;
+    display: block;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .wrap {
+    width: min(1160px, calc(100% - 32px));
+    margin: 0 auto;
+  }
+
+  .section {
+    padding: 88px 0;
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+    font-size: .82rem;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--brand);
+    font-weight: 700;
+  }
+
+  .eyebrow:before {
+    content: "";
+    width: 28px;
+    height: 1px;
+    background: linear-gradient(90deg, var(--brand), transparent);
+  }
+
+  h1, h2, h3, p {
+    margin: 0;
+  }
+
+  .grid {
+    display: grid;
+    gap: 24px;
+  }
+
+  .card {
+    background: rgba(255, 255, 255, .78);
+    backdrop-filter: blur(18px);
+    border: 1px solid rgba(234, 223, 214, .9);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+  }
+
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(255, 250, 244, .72);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(234, 223, 214, .8);
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 0;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 800;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+
+  .mark {
+    width: 40px;
+    height: 40px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #efc3d0, #fff, #f2d1ad);
+    display: grid;
+    place-items: center;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .7);
+  }
+
+  .navlinks {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+    color: var(--muted);
+    font-size: .95rem;
+  }
+
+  .hero {
+    padding: 44px 0 34px;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1.1fr .9fr;
+    align-items: center;
+  }
+
+  .hero-copy {
+    padding: 34px 0;
+  }
+
+  .hero h1 {
+    font-size: clamp(3rem, 7vw, 5.7rem);
+    line-height: .95;
+    letter-spacing: -.04em;
+    max-width: 10ch;
+  }
+
+  .hero p {
+    margin-top: 22px;
+    font-size: 1.08rem;
+    color: var(--muted);
+    max-width: 58ch;
+  }
+
+  .actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+  }
+
+  .btn {
+    padding: 15px 22px;
+    border-radius: 999px;
+    font-weight: 700;
+    border: 1px solid transparent;
+    transition: .2s ease;
+  }
+
+  .btn.primary {
+    background: linear-gradient(135deg, var(--brand), #e07c86);
+    color: #fff;
+    box-shadow: 0 16px 32px rgba(184, 95, 122, .28);
+  }
+
+  .btn.secondary {
+    background: #fff;
+    border-color: var(--line);
+  }
+
+  .hero-panel {
+    padding: 20px;
+  }
+
+  .hero-art {
+    min-height: 560px;
+    border-radius: calc(var(--radius) + 8px);
+    overflow: hidden;
+    position: relative;
+    background: linear-gradient(160deg, #f8d8e1 0, #fff 42%, #e8f0da 100%);
+  }
+
+  .hero-art img,
+  .hero-art video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .hero-art img {
+    mix-blend-mode: multiply;
+    opacity: .92;
+  }
+
+  .floating {
+    position: absolute;
+    inset: auto 18px 18px auto;
+    padding: 16px 18px;
+    background: rgba(255, 255, 255, .84);
+    border: 1px solid rgba(255, 255, 255, .6);
+    border-radius: 20px;
+    max-width: 220px;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, .08);
+  }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-top: 24px;
+  }
+
+  .stat {
+    padding: 18px;
+    border-radius: 22px;
+    background: #fff;
+    border: 1px solid var(--line);
+  }
+
+  .stat strong {
+    display: block;
+    font-size: 1.35rem;
+  }
+
+  .stat span {
+    color: var(--muted);
+    font-size: .92rem;
+  }
+
+  .section-head {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: end;
+    margin-bottom: 28px;
+  }
+
+  .section-head p {
+    max-width: 56ch;
+    color: var(--muted);
+  }
+
+  .products,
+  .features,
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .product,
+  .feature,
+  .gallery img,
+  .gallery video {
+    height: 100%;
+  }
+
+  .product {
+    padding: 18px;
+  }
+
+  .thumb {
+    border-radius: 22px;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    background: #f7efe8;
+    width: 100%;
+  }
+
+  .video-card {
+    padding: 18px;
+  }
+
+  .video-frame {
+    width: 100%;
+    border-radius: 22px;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    background: #f7efe8;
+  }
+
+  .product h3,
+  .feature h3 {
+    font-size: 1.1rem;
+    margin-top: 14px;
+  }
+
+  .product p,
+  .feature p,
+  .pricing p,
+  .contact p {
+    margin-top: 10px;
+    color: var(--muted);
+  }
+
+  .feature {
+    padding: 22px;
+  }
+
+  .feature .icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 16px;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(135deg, #f4d2dc, #fff4ea);
+    font-size: 1.2rem;
+    margin-bottom: 16px;
+  }
+
+  .pricing {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .price {
+    padding: 28px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .price.highlight {
+    background: linear-gradient(180deg, #fff 0, #fff6ef 100%);
+    border-color: #f0d2bf;
+  }
+
+  .tag {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 8px 12px;
+    border-radius: 999px;
+    background: var(--brand);
+    color: #fff;
+    font-size: .78rem;
+    font-weight: 700;
+  }
+
+  .amount {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-top: 14px;
+  }
+
+  .amount small {
+    font-size: .95rem;
+    color: var(--muted);
+  }
+
+  ul {
+    padding-left: 18px;
+    color: var(--muted);
+  }
+
+  li {
+    margin: 10px 0;
+  }
+
+  .contact-grid {
+    grid-template-columns: .95fr 1.05fr;
+  }
+
+  .contact-box {
+    padding: 28px;
+  }
+
+  .form {
+    display: grid;
+    gap: 14px;
+  }
+
+  .field,
+  .select,
+  .textarea {
+    width: 100%;
+    padding: 15px 16px;
+    border-radius: 16px;
+    border: 1px solid var(--line);
+    background: #fff;
+    font: inherit;
+  }
+
+  .textarea {
+    min-height: 140px;
+    resize: vertical;
+  }
+
+  .form .btn {
+    width: 100%;
+  }
+
+  .footer {
+    padding: 24px 0 40px;
+    color: var(--muted);
+    font-size: .92rem;
+  }
+
+  @media (max-width: 900px) {
+    .hero-grid,
+    .products,
+    .features,
+    .pricing,
+    .gallery,
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+      max-width: none;
+    }
+
+    .section {
+      padding: 68px 0;
+    }
+
+    .stats {
+      grid-template-columns: 1fr;
+    }
+
+    .nav {
+      gap: 12px;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .section-head {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .a .card.price:hover { transform: translateY(-5px); }
+  }
+</style>
+
+</head>
+
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="/" aria-label="Inicio FLORÉA">
+        <img class="brand-logo" src="SVG/logo.svg" alt="FLORÉA" />
+      </a>
+      <nav class="navlinks" aria-label="Primary">
+        <a href="#products">Productos</a>
+        <a href="#features">Características</a>
+        <a href="#gallery">Galería</a>
+        <a href="#pricing">Presentaciones</a>
+        <a href="#contact">Contacto</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="wrap grid hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">Confitería botánica</span>
+          <h1>Una flor que puedes saborear.</h1>
+          <p>FLORÉA transforma los sabores en una experiencia dulce y original. Descubre nuestras esferas de gelatina cristalina, con delicados detalles florales creadas para quienes buscan nuevas experiencias gastronómicas.</p>
+          <div class="actions"><a class="btn primary" href="#pricing">Descubrir presentaciones</a><a class="btn secondary" href="https://wa.me/59176787951?text=Hola%2C%20me%20interesa%20el%20Producto%20.%20Quisiera%20consultar%20el%20precio%20y%20disponibilidad." target="_blank" rel="noopener noreferrer">Realizar un pedido</a></div>
+          <div class="stats">
+            <div class="stat"><strong>5 cm</strong><span>diámetro del producto</span></div>
+            <div class="stat"><strong>2,5 cm</strong><span>altura de cada esfera</span></div>
+            <div class="stat"><strong>Sabor</strong><span>inspirado en Bolivia</span></div>
+          </div>
+        </div>
+      <div class="hero-panel card">
+        <div class="hero-art" style="height: 560px;">
+          <video 
+            src="video/florea.mp4" 
+            poster="images/hero-florea.png"
+            autoplay loop muted playsinline
+            style="width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0;"
+            onplay="document.getElementById('tarjeta-hero').style.opacity='0'; document.getElementById('tarjeta-hero').style.pointerEvents='none';" y onpause="document.getElementById('tarjeta-hero').style.opacity='1'; document.getElementById('tarjeta-hero').style.pointerEvents='auto';" dentro de tu etiqueta <video>
+
+              <div class="hero-panel card">
+
+
+
+
+
+            </video>>
+          </video>
+            <div id="tarjeta-hero" class="floating" style="bottom: 65px; transition: opacity 0.3s;">
+              <strong>Delicadeza que sorprende.</strong>
+              <p style="margin-top:6px;color:var(--muted)">
+                Una presentación floral, un sabor tradicional y una experiencia diferente para disfrutar y compartir.
+              </p>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
+    <section id="products" class="section">
+      <div class="wrap">
+        <div class="section-head"><div><span class="eyebrow">Nuestro producto</span><h2>Una creación especial para cada ocasión</h2></div><p>Cada esfera combina una apariencia cristalina, detalles florales en una presentación individual que convierte cada momento en algo especial.</p></div>
+        <div class="grid products">
+          <article class="card product">
+            <img class="thumb" src="images/fp5.png" alt="Signature FLORÉA assortment" /><h3>Esfera FLORÉA</h3><p>Nuestra creación principal: una esfera de gelatina con delicados detalles florales</p></article>
+          <article class="card product">
+            <img class="thumb" src="/images/fp6.png" alt="Celebration FLORÉA assortment" /><h3>Edición Especial</h3><p>Una presentación pensada para celebraciones, reuniones y momentos en los que quieres sorprender con un detalle diferente.</p></article>
+          <article class="card product">
+            <img class="thumb" src="/images/fp7.png" alt="Premium gift FLORÉA box" /><h3>Presentación de Regalo</h3><p>Un empaque individual de diseño elegante que convierte a FLORÉA en una propuesta original para regalar y compartir.</p></article>
+        </div>
+      </div>
+    </section>
+    <section id="features" class="section">
+      <div class="wrap">
+        <div class="section-head"><div><span class="eyebrow">Nuestra esencia</span><h2>¿Qué hace especial a FLORÉA?</h2></div><p>Una propuesta que une inspiración boliviana, creatividad y presentación visual para ofrecer una nueva manera de experimentar la confitería.</p></div>
+        <div class="grid features">
+          <article class="card feature"><div class="icon">✿</div><h3>Diseño floral</h3><p>Una delicada composición floral encapsulada que convierte cada esfera en una pieza visualmente atractiva y diferente.</p></article>
+          <article class="card feature"><div class="icon">◌</div><h3>Textura cristalina</h3><p>Una estructura gelatinosa y translúcida que permite apreciar los detalles de su interior y disfrutar de una textura suave.</p></article>
+          <article class="card feature"><div class="icon">◎</div><h3>Sabor con identidad boliviana</h3><p>Inspirado en el mocochinchi, combina notas dulces y aromáticas que evocan uno de los sabores tradicionales de Bolivia.</p></article>
+        </div>
+      </div>
+    </section>
+    <section id="gallery" class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Galería</span><h2>Descubre FLORÉA desde cada detalle</h2></div><p>Conoce nuestra propuesta a través de fotografías que muestran la presentación del producto, su empaque y distintas formas de disfrutarlo.</p></div>
+        <div class="grid gallery">
+          <img class="card" src="/images/fp2.png" alt="FLORÉA dessert close-up with flowers" />
+          <img class="card" src="/images/fp3.png" alt="FLORÉA gift box presentation" />
+          <img class="card" src="/images/fp4.png" alt="FLORÉA assorted crystal spheres" />
+        </div>
+      </div>
+    </section>
+    <section id="pricing" class="section">
+      <div class="wrap">
+        <div class="section-head"><div><span class="eyebrow">Presentaciones</span><h2>FLORÉA para disfrutar, compartir y regalar</h2></div><p>Elige la presentación que mejor se adapte a tu ocasión y descubre una propuesta diferente para disfrutar de un dulce con inspiración boliviana.</p></div>
+        <div class="grid pricing">
+          <a href="https://wa.me/59176787951?text=Hola%2C%20me%20interesa%20la%20Presentaci%C3%B3n%20Individual%20de%20FLOR%C3%89A%20de%206%20unidades.%20Quisiera%20consultar%20el%20precio%20y%20disponibilidad."
+          target="_blank" target="_blank" rel="noopener noreferrer" style="display: block; text-decoration: none; color: inherit; cursor: pointer;">
+            <article class="card price">
+            <h3>Presentación Individual</h3>
+            <div class="amount">Consultar <small>/ 1 unidad</small>
+            </div>
+            <p>Ideal para descubrir el producto y disfrutar de una experiencia diferente.</p>
+            <ul><li>1 semi esfera FLORÉA</li><li>Presentación individual</li><li>Ideal para degustar</li></ul>
+          </article>
+          </a>
+          
+          <a href="https://wa.me/59176787951?text=Hola%2C%20me%20interesa%20la%20Caja%20FLOR%C3%89A%20de%2012%20unidades.%20Quisiera%20conocer%20el%20precio%20y%20disponibilidad."
+          target="_blank" target="_blank" rel="noopener noreferrer" style="display: block; text-decoration: none; color: inherit; cursor: pointer;">
+            <article class="card price highlight">
+              
+              <h3>Caja FLORÉA</h3><div class="amount">Consultar <small>/ 4 unidades</small></div><p>Una selección para compartir, sorprender y disfrutar en buena compañía.</p><ul><li>4 semi esferas FLORÉA</li><li>Empaque de presentación</li><li>Ideal para regalar</li></ul></article>
+          </a>
+          
+          <a href="https://wa.me/59176787951?text=Hola%2C%20me%20interesa%20la%20Edici%C3%B3n%20para%20Eventos%20de%20FLOR%C3%89A%20de%2024%20unidades.%20Quisiera%20consultar%20el%20precio%20y%20las%20condiciones%20del%20pedido."
+          target="_blank" target="_blank" rel="noopener noreferrer" style="display: block; text-decoration: none; color: inherit; cursor: pointer;">
+             <article class="card price"><h3>Edición para Eventos</h3><div class="amount">Consultar <small>/ 24 unidades</small></div><p>Una propuesta especial para celebraciones, reuniones y ocasiones importantes.</p><ul><li>24 esferas FLORÉA</li><li>Presentación para compartir</li><li>Pedidos para eventos</li></ul></article>
+          </a>
+         
+        </div>
+      </div>
+    </section>
+    <section id="contact" class="section">
+      <div class="wrap grid contact-grid">
+        <div class="card contact-box">
+          <span class="eyebrow">Contáctanos</span>
+          <h2>Haz tu pedido y descubre una nueva experiencia de sabor</h2>
+          <p>Escríbenos para consultar nuestras presentaciones, realizar un pedido o solicitar información sobre productos para celebraciones y eventos.</p>
+          <div style="margin-top:18px;color:var(--muted)">
+        
+        <a href="https://www.instagram.com/florea.gourmet.lp/"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Visitar Instagram de FLORÉA"
+           style="display:inline-flex; align-items:center; gap:6px; color:inherit; text-decoration:none;">
+            <p style="display:flex; align-items:center; gap:10px;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="18" cy="6" r="1" fill="currentColor" stroke="none"/>
+          </svg>
+          <strong>Instagram:</strong>
+           
+          
+            @florea.gourmet
+        </a>
+      </p>
+        <a href="https://www.tiktok.com/@florea_gourmet_?lang=es" target="_blank" >
+        <p style="display:flex; align-items:center; gap:10px;">
+          <svg width="20" height="20" viewBox="0 0 24 24"
+                      fill="currentColor">
+                  <path d="M19.6 6.2a5.5 5.5 0 0 1-3.4-3.9V2h-3.8v13.1a2.8 2.8 0 1 1-2.8-2.8c.3 0 .6 0 .9.1V8.5a7 7 0 1 0 5.7 6.8V8.6a9.3 9.3 0 0 0 5.1 1.5V6.3a5.6 5.6 0 0 1-1.7-.1z"/>
+                </svg>
+          <strong>TikTok:</strong>
+            <a href="https://www.tiktok.com/@florea_gourmet_?lang=es"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visitar TikTok de FLORÉA"
+                style="display:inline-flex; align-items:center; gap:6px; color:inherit; text-decoration:none;">
+                @florea.gourmet
+            </a>
+          </p>
+          <p style="display:flex; align-items:center; gap:10px;">
+<a href="https://wa.me/59176787951"
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="Contactar por WhatsApp a FLORÉA"
+     style="display:inline-flex; align-items:center; gap:6px; color:inherit; text-decoration:none;">
+
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.82 14.01c-.24.68-1.41 1.3-1.95 1.38-.5.08-1.13.11-1.82-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.79-4.18-4.94-4.37-.14-.19-1.18-1.57-1.18-3 0-1.43.75-2.13 1.02-2.42.27-.29.58-.36.78-.36.19 0 .39 0 .56.01.18.01.42-.07.66.5.24.58.82 2.01.89 2.16.07.14.12.31.02.5-.1.19-.14.31-.29.48-.14.17-.3.38-.43.51-.14.14-.29.3-.12.58.17.29.75 1.24 1.61 2.01 1.11.99 2.04 1.3 2.33 1.44.29.14.46.12.63-.07.17-.19.72-.84.91-1.13.19-.29.39-.24.65-.14.27.1 1.69.8 1.98.94.29.14.48.22.55.34.07.12.07.69-.17 1.37z"/>
+  </svg>
+  <strong>WhatsApp:</strong>
+  
+    +591 76787951
+  </a>
+</p>
+
+        </a>
+            <p>
+              <strong>Entregas:</strong> 
+              Consultar disponibilidad y coordinación de pedidos
+              </p>
+          </div>
+      </div>
+        
+        <div class="card contact-box">
+          <form action="/__landingpage/form-submit" method="POST" id="contact-form" class="form">
+            <h2>Quieres opciones personalizadas o un encargo especial, escribenos para poder ayudarte</h2>
+            <input class="field" type="text" name="name" required placeholder="Tu nombre" />
+            <input class="field" type="email" name="email" required placeholder="tu@correo.com" />
+            <input class="field" type="tel" name="phone" required placeholder="Número de teléfono" />
+            <select class="select" name="interest" required>
+              <option value="">Selecciona tu interés</option><option>Presentación individual</option><option>Caja FLORÉA</option><option>Pedido para eventos</option><option>Consulta de productos</option>
+            </select>
+            <textarea class="textarea" name="message" required placeholder="Cuéntanos qué presentación te interesa"></textarea>
+            <a href="https://wa.me/59176787951?text=Hola%2C%20me%20interesa%20la%20Presentaci%C3%B3n%20Individual%20de%20FLOR%C3%89A%20de%206%20unidades.%20Quisiera%20consultar%20el%20precio%20y%20disponibilidad."
+          target="_blank" target="_blank" rel="noopener noreferrer" style="display: block; text-decoration: none; color: inherit; cursor: pointer;">
+              <button class="btn primary" type="submit">Enviar consulta</button>
+            </a>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer"><div class="wrap">FLORÉA, confitería botánica que transforma los sabores de Bolivia en experiencias originales.</div></footer>
+</body>
+</html>
+
